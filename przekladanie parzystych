@@ -1,3 +1,4 @@
+przekladanie parzystych--------------------------------------------------------------------------------------------------------------
 #include <stdio.h>
 
 int main() {
@@ -48,6 +49,1382 @@ int main() {
         printf("%d ", tabela[i]);
     }
     printf("\n");
+
+    return 0;
+}
+pokerowelove--------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void pokerowelove(int a, int b, int c, int d)
+{
+    int count[10]={0};
+    count[a]++;
+    count[b]++;
+    count[c]++;
+    count[d]++;
+
+    int para=0;
+    int trojka=0;
+    int czworka=0;
+
+    for(int i=1; i<=9;i++)
+    {
+        if(count[i]==2)
+        {
+            para++;
+        } else if (count[i]==3)
+        {
+            trojka++;
+        } else if (count[i]==4)
+        {
+            czworka++;
+        }
+    }
+    if(czworka==1)
+    {
+        printf("Kareta\n");
+    } else if(trojka==1)
+    {
+        printf("trojka\n");
+    } else if(para==1)
+    {
+        printf("para\n");
+    } else if(para==2)
+    {
+        printf("dwie pary\n");
+    }
+}
+
+int main()
+{
+    int a=3, b=3, c=3, d=3;
+    pokerowelove(a, b, c, d);
+}
+CAŁA RESZTA------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Hello World!\n");
+    
+    int x = 5;
+    printf("1w tym miejscy bedzie %d ale po tym o jeden wieksza %d\n", x, x+1);
+
+    float a;
+    scanf("%f", &a);
+    printf("2w tym miejscy bedzie %f ale po tym o jeden wieksza %f\n", a, a+1);
+
+    double b;
+    scanf("%lf", &b);
+    printf("3w tym miejscy bedzie %lf ale po tym o jeden wieksza %lf\n", b, b+1);
+
+
+    double c;
+    scanf("%lf", &c);
+    printf("4w tym miejscy bedzie %lf ale po tym podwojona %lf\n", c, c*2);
+
+
+    float d;
+    scanf("%f", &d);
+    printf("5w tym miejscy bedzie %f do 2 miejsc po przecnku %.2f \n", d, d);
+
+
+    int e;
+    scanf("%d", &e);
+    printf("odwortnosc %d to %f \n", e, 1/(float)(e));
+    
+
+    int f, g;
+    scanf("%d%d", &f, &g);
+    printf("Srednia arytmetyczna: %f \n", (f+g)/2.);
+    
+    int h;
+    scanf("%d", &h);
+    printf("Pierwiastek z liczby %d: %f", h, sqrt(h));
+
+    float i;
+    scanf("%f", &i);
+    printf("Wartosc bezwzgledna z %f: %f", i, fabs(i));
+    
+    float j;
+    scanf("%f", &j);
+    printf("%e", j);
+    
+    float k;
+    scanf("%f", &k);
+    printf("%f", pow(k, 1./3));
+
+
+    int l;
+    scanf("%d", &l);
+    if(l>=0){
+        printf("|%d| = %d", l, l);
+    }else{
+        printf("|%d| = %d", l, -l);
+    }
+    
+    //lub (signum)
+    
+    int l;
+    scanf("%d", &l);
+    printf("signum(%d)", l);
+    if(l>0){
+        printf(" = 1");
+    }else if(l<0){
+        printf(" = -1");
+    }else{
+        printf(" = 0");
+    }
+    
+    
+    int n, m;
+    scanf("%d%d", &n, &m);
+    printf("max(%d, %d)", n, m);
+    if(n>m){
+        printf(" = %d", n);
+    }else{
+        printf(" = %d", m);
+    }
+    
+    
+    int n, m, o;
+    scanf("%d%d%d", &n, &m, &o);
+    printf("max(%d, %d, %d)", n, m, o);
+    if(n>m){
+        if(n>o){
+             printf(" = %d", n);
+        }else{
+             printf(" = %d", o);
+        }
+
+    }else{
+       if(m>o){
+             printf(" = %d", m);
+        }else{
+             printf(" = %d", o);
+        }
+    }
+    
+    
+    //lub
+    
+    int n, m, o;
+    scanf("%d%d%d", &n, &m, &o);
+    printf("max(%d, %d, %d)", n, m, o);
+    if(n>m && n>o){
+        printf(" = %d", n)
+    }else if(m>o) {
+        printf(" = %d", m)
+    }else{
+        printf(" = %d", o)
+    }
+    
+    //w domu mediana z min i max
+    
+    int a, b, c, h, x;
+    float p, P;
+    printf("Wybierz opcje (1, 2): ");
+    scanf("%d", &x);
+    if(x==1){
+        printf("Pole trojkota podstawa razy wysokosc: \n");
+        printf("podaj podstawe: ");
+        scanf("%d", &a);
+        printf("podaj wysokosc: ");
+        scanf("%d", &h);
+        P = (a*h)/2.;
+        printf("Pole trojkota wynosi: %f", P);
+    }else if(x==2){
+        printf("Podaj boki trojkota: \n");
+        printf("podaj 1. bok: ");
+        scanf("%d", &a);
+        printf("podaj 2. bok: ");
+        scanf("%d", &b);
+        printf("podaj 3. bok: ");
+        scanf("%d", &c);
+        p = (a+b+c)/2.;
+        P = sqrt(p*(p-a)*(p-b)*(p-c));
+        printf("Pole trojkota wynosi: %f", P);
+    }else{
+        printf("no debil");
+    }
+    
+    return 0;
+}
+--------------------------------------------------
+2
+---------------------------------------------------
+zad 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void zlicz(){
+
+    static int liczba=0;
+    liczba++;
+    printf("Te funkcje wywolano %d razy\n", liczba);
+
+}
+
+int main()
+{
+    zlicz();
+    zlicz();
+    zlicz();
+    zlicz();
+    zlicz();
+
+    return 0;
+}
+
+
+zad 2 void
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void zsumuj(int a){
+
+    static int liczba=0;
+    liczba += a;
+    printf("Podales : %d. Suma = %d\n", a, liczba);
+
+}
+
+int main()
+{
+    zsumuj(5);
+    zsumuj(3);
+    zsumuj(2);
+    zsumuj(4);
+    zsumuj(5);
+
+    return 0;
+}
+
+zad 2 int 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int zsumuj(int a){
+
+    static int liczba=0;
+    liczba += a;
+    return liczba;
+}
+
+int main()
+{
+
+    printf("Podales : %d. Suma = %d\n", 5, zsumuj(5));
+    printf("Podales : %d. Suma = %d\n", 4, zsumuj(4));
+    printf("Podales : %d. Suma = %d\n", 3, zsumuj(3));
+    printf("Podales : %d. Suma = %d\n", 2, zsumuj(2));
+    printf("Podales : %d. Suma = %d\n", 1, zsumuj(1));
+
+
+    return 0;
+}
+
+zad3
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+unsigned int silnia(int x)
+{
+    if(x==0) return 1;
+    return x*silnia(x-1);
+}
+
+int main()
+{
+
+    printf("silnia z 0 = %d\n", silnia(0));
+    printf("silnia z 1 = %d\n", silnia(1));
+    printf("silnia z 2 = %d\n", silnia(2));
+    printf("silnia z 3 = %d\n", silnia(3));
+    printf("silnia z 4 = %d\n", silnia(4));
+
+    return 0;
+}
+
+zad 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x == 0) return 1;
+        return 2*wyraz(x-1)+5;
+}
+
+int main()
+{
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+    }
+
+
+    return 0;
+}
+
+zad5
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x == 0 || x == 1) return 1;
+        return wyraz(x-1)+ 2*wyraz(x-2)+3;
+}
+
+int main()
+{
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+    }
+
+
+    return 0;
+}
+
+zad 6
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x<=1) return 1;
+        return wyraz(x-1)+ wyraz(x-2);
+}
+
+void ograniczenie(int k){
+
+    int i;
+    for(i=0;i<k;i++){
+            if(wyraz(i)>k){
+            break;
+        }
+        printf("%d ; ", wyraz(i));
+
+    }
+
+}
+
+int main()
+{
+    int x;
+    scanf("%d", &x);
+    ograniczenie(x);
+
+    return 0;
+}
+
+
+ciag tribonaciego
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x<=2) return 1;
+        return wyraz(x-1)+ wyraz(x-2)+wyraz(x-3);
+}
+
+int main()
+{
+
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+
+    }
+    return 0;
+}
+
+
+zad7
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x==0) return 1;
+        else if(x==1)
+            return 2;
+    int i;
+    int suma = 0;
+    for(i=0;i<x;i++){
+        suma += wyraz(i);
+    }
+    return suma;
+}
+
+int main()
+{
+
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+
+    }
+    return 0;
+}
+
+
+zad 8
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x==0 || x==1) return 1;
+    if(x%2==0)
+        return wyraz(x-1)+x;
+    else
+        return wyraz(x-1)*x;
+
+
+}
+
+int main()
+{
+
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+
+    }
+    return 0;
+}
+
+
+zad9
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int x)
+{
+    if(x<=2) return 1;
+    if(x%3==0)
+        return wyraz(x-1)+wyraz(x-2);
+    else if(x%3==1)
+        return wyraz(x-1)*5 +4;
+    else if(x%3==2)
+        return wyraz(x-1)+1;
+
+
+}
+
+int main()
+{
+
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i));
+
+    }
+    return 0;
+}
+
+
+zad 10
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int n, int x, int y)
+{
+    if(n==0)
+        return x;
+    if(n==1)
+        return y;
+    return wyraz(n-1, x, y)+wyraz(n-2, x, y);
+}
+
+int main()
+{
+    int x, y;
+    scanf("%d%d", &x, &y);
+    int i;
+    for(i=0;i<10;i++){
+        printf("%d ; ", wyraz(i, x, y));
+
+    }
+    return 0;
+}
+
+zad 11
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int wyraz(int n, int x)
+{
+    if(n==0)
+        return x;
+
+    if(wyraz(n-1, x)%2==0)
+        return wyraz(n-1, x)/2;
+    else
+        return 3*wyraz(n-1, x)+1;
+
+}
+
+int main()
+{
+    int x = 101;
+    int i;
+    for(i=0;i<30;i++){
+        printf("%d ; ", wyraz(i, x));
+        if(wyraz(i, x)==1){
+            break;
+        }
+    }
+
+    return 0;
+}
+
+
+zad 12
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int f(int x, int y)
+{
+    if(y==0)
+        return x;
+    else if(x==0)
+        return y;
+    else
+        return f(x-1, y) + f(x, y-1) + f(x-1, y-1);
+
+
+}
+
+int main()
+{
+    int x=10;
+    int y=10;
+
+    printf("%d",f(x, y));
+
+    return 0;
+}
+---------------------------------------------------------
+3
+---------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int podwoj(int *x){
+    *x=2*(*x);
+    return *x;
+}
+
+int mniejsza(int *a, int *b){
+    if(*a<*b){
+        return *a;
+    }else
+        return *b;
+}
+
+void zamiana(int *x, int *y){
+int temp;
+temp = *x;
+*x = *y;
+*y = temp;
+}
+
+void zmiennajakmniejsza(int *x, int *y){
+    if(*x>*y){
+        int temp;
+        temp = *x;
+        *x = *y;
+        *y = temp;
+    }
+}
+
+int suma(int *a, int *b){
+    return *a+*b;
+}
+
+void przepisz(int n, int*x){
+    *x = n;
+}
+
+int* rezerwacja(){
+    return malloc(sizeof(int));
+}
+
+int* rezerwacjafloat(){
+    return malloc(sizeof(float));
+}
+
+int main()
+{
+    int a = 2;
+    int b = 6;
+
+    printf("zad1\n");
+    printf("%d\n", podwoj(&a));
+    printf("%d\n", a);
+    printf("zad2\n");
+    printf("%p\n", a);
+    printf("%p\n", b);
+    printf("%p\n", mniejsza(&a, &b));
+    printf("zad3\n");
+    zamiana(&a, &b);
+    printf("%d\n", a);
+    printf("%d\n", b);
+    printf("%p\n", a);
+    printf("%p\n", b);
+    printf("zad4\n");
+    zmiennajakmniejsza(&a, &b);
+    printf("%d\n", a);
+    printf("%d\n", b);
+    printf("%p\n", a);
+    printf("%p\n", b);
+
+
+    printf("zad5\n");
+    int const x = 5;
+    int const y = 5;
+    printf("%d\n", suma(&x, &y));
+
+    printf("zad6\n");
+    int n = 15;
+    przepisz(n, &x);
+    printf("%d\n", x);
+    printf("zad9\n");
+    int *wsk = rezerwacja();
+    printf("%p\n", wsk);
+    printf("zad10\n");
+    int *wskfloat = rezerwacjafloat();
+    printf("%p\n", wskfloat);
+
+    return 0;
+}
+
+
+
+------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+//12
+int* rezerwuj(int n){
+    return malloc(n*sizeof(int));
+}
+
+
+void przepisz_stala(const int* x, int* y)
+{
+    *y = *x;
+}
+
+double f(int x){
+    return 3*x;
+}
+
+double g(double(*fun)(int x), int n){
+    return fun(n);
+}
+
+int foo1(int x){
+    return 3*x;
+}
+int foo2(int x){
+    return x*x;
+}
+
+void h(int (*fun1)(int x), int (*fun2)(int x), int n){
+    if(fun1(n)==fun2(n)){
+        printf("sa rowne");
+    }else{
+        printf("nie sa rowne");
+    }
+}
+
+int main()
+{
+    printf("zad15\n");
+    const int a=5;
+    int b=19;
+    przepisz_stala(&a, &b);
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    int n = 6;
+    double (*wsknaf)(int);
+    wsknaf = &f;
+    printf("%p\n", wsknaf);
+    printf("%f\n", g(wsknaf, n));
+
+    int (*wsknaf1)(int);
+    int (*wsknaf2)(int);
+
+    wsknaf1 = &foo1;
+    wsknaf2 = &foo2;
+
+    h(wsknaf1, wsknaf2, 5);
+
+    return 0;
+}
+------------------------------------------------
+4
+-------------------------------------------------
+cw0
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+
+int main()
+{
+    printf("cw 4.2.0\n\n");
+    int rozmiar = 4;
+    int tab[rozmiar];
+    tab[0]=6; tab[1]=2; tab[2]=5; tab[3]=8;
+    wypisz(rozmiar, tab);
+    printf("%d\n", *tab);
+    int tab2[] = {9, 5, 7 ,3};
+    wypisz(rozmiar, tab2);
+    printf("%d\n", tab2[2]);
+    return 0;
+}
+
+
+cw1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void zerowanie(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        tab[i]=0;
+    }
+    wypisz(n, tab);
+}
+
+void nrindexu(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        tab[i]=i;
+    }
+    wypisz(n, tab);
+}
+
+void podwojenie(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        tab[i]*=2;
+    }
+    wypisz(n, tab);
+}
+
+void warbezw(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        tab[i] = abs(tab[i]);
+        }
+    }
+    wypisz(n, tab);
+}
+
+int main()
+{
+    printf("cw 4.2.1\n\n");
+    int rozmiar = 5;
+    int tab[] = {4,-3,2,-6,5};
+    wypisz(rozmiar, tab);
+    warbezw(rozmiar, tab);
+    zerowanie(rozmiar, tab);
+    nrindexu(rozmiar, tab);
+    podwojenie(rozmiar, tab);
+
+    return 0;
+}
+
+cw2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+int suma(unsigned int n, int * tab){
+    int i;
+    int suma = 0;
+    for(i=0;i<n;i++){
+        suma = suma + tab[i];
+    }
+    return suma;
+}
+
+int suma2(unsigned int n, int * tab){
+    int i;
+    int suma = 0;
+    for(i=0;i<n;i++){
+        suma = suma + tab[i]*tab[i];
+    }
+    return suma;
+}
+
+float srednia(unsigned int n, int * tab){
+
+int i;
+    float s = 0;
+    for(i=0;i<n;i++){
+        s = s + tab[i];
+    }
+    return s/n;
+}
+
+
+int main()
+{
+    printf("cw 4.2.2\n\n");
+    int rozmiar = 6;
+    int tab[] = {8, 2, -5, 1, 0, -9};
+    wypisz(rozmiar, tab);
+    printf("Suma: %d\n",suma(rozmiar, tab));
+    printf("Suma kwadratow: %d\n",suma2(rozmiar, tab));
+    printf("Srednia: %f\n",srednia(rozmiar, tab));
+    return 0;
+}
+
+cw4
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void wypisz(unsigned int n, unsigned int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+float sredniageometryczna(unsigned int n, unsigned int * tab){
+
+int i;
+    float s = 1;
+    for(i=0;i<n;i++){
+        s = s * tab[i];
+    }
+    float sr = pow(s, 1.0/n);
+    return sr;
+}
+
+float sredniaharmoniczna(unsigned int n, int * tab){
+
+int i;
+    float s = 0;
+    for(i=0;i<n;i++){
+        s = s + (1.0/tab[i]);
+    }
+    return n/s;
+}
+
+
+int main()
+{
+    printf("cw 4.2.4\n\n");
+    unsigned int tab[] = {8, 2, 5, 1, 9};
+    wypisz(5, tab);
+    printf("Srednia geometryczna: %f\n",sredniageometryczna(5, tab));
+    printf("Srednia harmoniczna: %f\n",sredniaharmoniczna(5, tab));
+    return 0;
+}
+
+
+cw5
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+
+void wypisz(unsigned int n, bool * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void sito(unsigned int n){
+bool tab[n];
+int i;
+for(i=0;i<n;i++){
+    tab[i] = true;
+}
+
+int j, k;
+for(j=2;j<n;j++){
+    if(tab[j]){
+        for(k=2*j;k<n;k=k+j){
+            tab[k]=false;
+        }
+    }
+}
+
+
+
+int l;
+for(l=n-1;l>0;l--){
+    if(tab[l]){
+        printf("Najwieksza liczba pierwsza mniejsza od %d: %d\n", n, l);
+        break;
+    }
+}
+int m;
+int wynik = 0;
+for(m=2;m<n; m++){
+    if(tab[m]){
+        wynik++;
+    }
+}
+printf("Liczba liczb pierwszych: %d", wynik);
+}
+
+
+int main()
+{
+    printf("cw 4.2.5\n\n");
+
+    sito(1000);
+
+    return 0;
+}
+
+cw6
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void przepisz(unsigned int n, int * tab1, int * tab2){
+    int i;
+    for(i=0;i<n;i++){
+        tab2[i]=tab1[i];
+    }
+}
+
+void przepiszodwr(unsigned int n, int * tab1, int * tab2){
+    int i;
+    for(i=0;i<n;i++){
+        tab2[i]=tab1[n-1-i];
+    }
+}
+
+int main()
+{
+    printf("cw 4.2.6\n\n");
+
+    int tab[] = {1, 2 , 3, 4, 5, 6};
+    int tabb[] = {4, 6, 6, 3, 3, 4};
+
+    wypisz(6, tab);
+    wypisz(6, tabb);
+    przepisz(6, tab, tabb);
+    wypisz(6, tab);
+    wypisz(6, tabb);
+    przepiszodwr(6, tab, tabb);
+    wypisz(6, tab);
+    wypisz(6, tabb);
+
+    return 0;
+}
+------------------------------------------
+5
+-----------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void suma(unsigned int n, int *tab1, int *tab2, int *tab3){
+    int i;
+    for(i=0; i<n; i++){
+        tab3[i] = tab1[i]+tab2[i];
+    }
+    wypisz(n, tab3);
+}
+
+void max(unsigned int n, int *tab1, int *tab2, int *tab3){
+    int i;
+    for(i=0; i<n; i++){
+        if(tab1[i]>tab2[i]){
+            tab3[i] = tab1[i];
+        }else{
+            tab3[i] = tab2[i];
+        }
+    }
+    wypisz(n, tab3);
+}
+
+void karuzela(unsigned int n, int *tab1, int *tab2, int *tab3){
+    int temp;
+    int i;
+    for(i=0;i<n;i++){
+        temp = tab2[i];
+        tab2[i] = tab1[i];
+        tab1[i] = tab3[i];
+        tab3[i] = temp;
+    }    
+}
+
+int main()
+{
+    int tab1[] ={1,2,3,4,5};
+    int tab2[] ={4,3,2,7,3};
+    int tab3[] =[3,5,3,2,1];
+    int n = 5;
+    suma(n ,tab1, tab2, tab3);
+    max(n ,tab1, tab2, tab3);
+    karuzela(n ,tab1, tab2, tab3);
+    return 0;
+}
+
+
+-----------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, double * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%f\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void doklejenie(unsigned int n, double *tab1, double *tab2, double *tab3){
+    int i;
+    for(i=0;i<2*n;i++){
+        if(i<n){
+            tab3[i] = tab1[i];
+        }else{
+            tab3[i] = tab2[i-n];
+        }
+    }
+    wypisz(2*n, tab3);
+}
+
+void doklejenie2(unsigned int n, double *tab1, double *tab2, double *tab3){
+    int i;
+    for(i=0;i<2*n;i++){
+        if(i%2==0){
+            tab3[i] = tab2[i/2];
+        }else{
+            tab3[i] = tab1[(i-1)/2];
+        }
+    }
+    wypisz(2*n, tab3);
+}
+
+
+
+int main()
+{
+    double tab[] = {2,7,1,3};
+    double tabb[] = {4,5,2,8};
+    double tabbb[8];
+    doklejenie(4, tab, tabb, tabbb);
+    doklejenie2(4, tab, tabb, tabbb);
+    return 0;
+}
+
+
+----------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void sortowanie(unsigned int n, int *tab1, int *tab2, int *tab3){
+    int i;
+    int max, srod, min;
+    for(i = 0;i<n;i++){
+        if(tab1[i]>tab2[i] && tab1[i]>tab3[i]){
+            max = tab1[i];
+            if(tab2[i]>tab3[i]){
+                srod = tab2[i];
+                min = tab3[i];
+            }else{
+                srod = tab3[i];
+                min = tab2[i];
+            }
+        }else{
+            if(tab2[i]>tab3[i]){
+                max = tab2[i];
+                if(tab3[i]>tab1[i]){
+                srod = tab3[i];
+                min = tab1[i];
+                }else{
+                srod = tab1[i];
+                min = tab3[i];
+                }
+            }else{
+                max = tab3[i];
+                if(tab2[i]>tab1[i]){
+                srod = tab2[i];
+                min = tab1[i];
+                }else{
+                srod = tab1[i];
+                min = tab2[i];
+                }
+            }
+        }
+    tab1[i] = max;
+    tab2[i] = srod;
+    tab3[i] = min;
+    }
+    wypisz(n, tab1);
+    wypisz(n, tab2);
+    wypisz(n, tab3);
+}
+
+
+int main()
+{
+    int tab[] = {2,7,2,3};
+    int tabb[] = {4,5,1,8};
+    int tabbb[] = {1,6,4,6};
+    sortowanie(4, tab, tabb, tabbb);
+
+    return 0;
+}
+
+
+--------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void maxwtab(unsigned int n, int *tab){
+    int i;
+    int max;
+    max = tab[0];
+    for(i = 1;i<n;i++){
+        if(tab[i]>max){
+            max = tab[i];
+        }
+    }
+    printf("Max w tabie = %d\n", max);
+}
+
+void minwtab(unsigned int n, int *tab){
+    int i;
+    int min;
+    min = tab[0];
+    for(i = 1;i<n;i++){
+        if(tab[i]<min){
+            min = tab[i];
+        }
+    }
+    printf("Min w tabie = %d\n", min);
+}
+
+
+void maxindex(unsigned int n, int *tab){
+    int i;
+    int max;
+    int k;
+    max = tab[0];
+    for(i = 1;i<n;i++){
+        if(tab[i]>max){
+            max = tab[i];
+            k=i;
+        }
+    }
+    printf("Max index = %d\n", k);
+}
+
+void minindex(unsigned int n, int *tab){
+    int i;
+    int min;
+    int k;
+    min = tab[0];
+    for(i = 1;i<n;i++){
+        if(tab[i]<min){
+            min = tab[i];
+            k=i;
+        }
+    }
+    printf("Min index = %d\n", k);
+}
+int main()
+{
+    int tab[] = {6,2,9,1,6,3,8};
+    maxwtab(7, tab);
+    minwtab(7, tab);
+    maxindex(7,tab);
+    minindex(7,tab);
+    return 0;
+}
+
+
+----------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+int iloscal(unsigned int n, int *tab1, int *tab2){
+    int i;
+    int suma = 0;
+    for(i=0;i<n;i++){
+        suma = suma+(tab1[i]*tab2[i]);
+    }
+    return suma;
+}
+
+
+int main()
+{
+    int tab1[] = {6,2,9,1,6,3,8};
+    int tab2[] = {6,2,9,1,6,3,8};
+
+    printf("Iloczyn scalarny: = %d\n", iloscal(7, tab1, tab2));
+
+    return 0;
+}
+
+------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void wypisz(unsigned int n, int * tab){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d\t", tab[i]);
+    }
+    printf("\n");
+
+}
+
+void jeden_w_lewo(unsigned int n, int *tab){
+    int i;
+    int temp = tab[0];
+    for(i=0;i<n-1;i++){
+        tab[i] = tab[i+1];
+    }
+    tab[n-1] = temp;
+
+    wypisz(n, tab);
+}
+
+
+int main()
+{
+    int tab1[] = {6,2,9,1,6,9,8};
+
+    jeden_w_lewo(7, tab1);
+
 
     return 0;
 }
